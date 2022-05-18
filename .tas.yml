@@ -1,0 +1,20 @@
+---
+framework: mocha
+preRun:
+  command:
+    - npm ci
+    - npm ci --prefix webpack-plugin
+    - npm run playwright-install
+    - npm run playwright-install-deps
+    - npm run prettier-check
+    - npm run release
+preMerge:
+  pattern:
+    - './test/unit/all.js'
+postMerge:
+  pattern:
+    - './test/unit/all.js'
+postRun:
+  command:
+    - node --version
+version: 1.0
