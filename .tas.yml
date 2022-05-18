@@ -5,8 +5,6 @@ preRun:
     - npm ci
     - npm ci --prefix webpack-plugin
     - npm run playwright-install
-    - sudo npm run playwright-install-deps
-    - npm run prettier-check
     - npm run release
 preMerge:
   pattern:
